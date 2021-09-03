@@ -365,12 +365,12 @@ if __name__ == '__main__':
     log_file = 'training_logs/{}.{}.log'.format(args.config, strftime("%y%m%d.%H%M", localtime()))
     logger.addHandler(logging.FileHandler(log_file))
 
-    from modules.utils.Pytorch_GPUManager import GPUManager
+    # from modules.utils.Pytorch_GPUManager import GPUManager
 
-    GM = GPUManager()
-    gpu = GM.auto_choice()
+    # GM = GPUManager()
+    # gpu = GM.auto_choice()
 
     for config in configs:
-        config.device = 'cuda:' + str(gpu)
-        # config.device = 'cpu'  # Uncomment this line to use CPU
+        # config.device = 'cuda:' + str(gpu)
+        config.device = 'cpu'  # Uncomment this line to use CPU
         multi_train(config=config, n=config.repeat)

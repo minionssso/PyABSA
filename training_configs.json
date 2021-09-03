@@ -1,6 +1,6 @@
 {
   "config1": {
-    "model_name": "lca_bert",
+    "model_name": "lcf_glove",
     "dataset": "rest14",
     "optimizer": "adam",
     "learning_rate": 0.00002,
